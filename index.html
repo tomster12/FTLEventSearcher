@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="index.css">
+    <script src="parsed.js"></script>
+    <script defer src="index.js"></script>
+  </head>
+
+  <body>
+    <form id="searchForm" onsubmit="return formSubmit(event)">
+      <input id="searchInput"
+        autofocus="autofocus"
+        onfocus="this.select()"
+        autocomplete="off"
+      ></input>
+    </form>
+    <div id="outputDiv"></div>
+  </body>
+</html>
