@@ -53,7 +53,10 @@ function loadEvents(check) {
     let texts = [];
     let getTexts = subEvt => {
       if (subEvt.text) texts = texts.concat(evalText(subEvt.text));
-      if (subEvt.choices) subEvt.choices.forEach(c => getTexts(c.event));
+      if (subEvt.choices) subEvt.choices.forEach(c => {
+        texts = texts.concat(evalText(c.text));
+        getTexts(c.event);
+      });
     }; getTexts(evt);
     let found = texts.find(t => t.toLowerCase().includes(check.toLowerCase()));
 
